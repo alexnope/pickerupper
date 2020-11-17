@@ -1,5 +1,15 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
+import HomePage from './HomePage';
+import MapPage from './MapPage';
+import GamePage from './GamePage';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect,
+} from "react-router-dom";
 
 export default class App extends Component {
   constructor(props) {
@@ -8,9 +18,13 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
-        <h1>This is django rendering a react page.</h1>
-      </div>
+      <Router>
+        <Switch>
+          <Route path="/home" component={HomePage} />
+          <Route path="/map" component={MapPage} />
+          <Route path="/game" component={GamePage} />
+        </Switch>
+      </Router>
     );
   }
 }
