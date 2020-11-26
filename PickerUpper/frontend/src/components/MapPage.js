@@ -2,6 +2,9 @@ import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
+import GameDetails from './GameDetails';
+import Map from './Map';
+  
 
 class MapPage extends React.Component {
 
@@ -19,7 +22,16 @@ class MapPage extends React.Component {
                         <Tab label="Schedule Game" />
                     </Tabs>
                 </AppBar>
-                <p>This is the map page!</p>
+                <table style={{marginTop: '2rem'}}>
+                    <tr>
+                        <td>
+                            <GameDetails />
+                        </td>
+                        <td>
+                            <Map />
+                        </td>
+                    </tr>
+                </table>
             </div>
         )
     }
