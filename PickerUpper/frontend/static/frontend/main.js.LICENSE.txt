@@ -196,6 +196,8 @@
 
 /*! export TRAFFIC_LAYER [provided] [no usage info] [missing usage info prevents renaming] */
 
+/*! export ThemeConsumer [provided] [no usage info] [missing usage info prevents renaming] */
+
 /*! export TrafficLayer [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export __HistoryContext [provided] [no usage info] [missing usage info prevents renaming] */
@@ -235,6 +237,8 @@
 /*! export construct [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export create [provided] [no usage info] [missing usage info prevents renaming] */
+
+/*! export createBootstrapComponent [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export createBrowserHistory [provided] [no usage info] [missing usage info prevents renaming] */
 
@@ -610,6 +614,8 @@
 
 /*! export unstable_wrapCallback [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/scheduler/cjs/scheduler.production.min.js .unstable_wrapCallback */
 
+/*! export useBootstrapPrefix [provided] [no usage info] [missing usage info prevents renaming] */
+
 /*! export useCallback [provided] [no usage info] [missing usage info prevents renaming] */
 
 /*! export useCallback [provided] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react/cjs/react.production.min.js .useCallback */
@@ -716,6 +722,10 @@
 
 /*! runtime requirements: __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
 
+/*! runtime requirements: __webpack_exports__, module */
+
+/*! runtime requirements: __webpack_exports__, module, __webpack_require__ */
+
 /*! runtime requirements: __webpack_exports__, module.loaded, module.id, module, __webpack_require__.nmd, __webpack_require__, __webpack_require__.* */
 
 /*! runtime requirements: __webpack_require__ */
@@ -746,6 +756,8 @@
 
 /*! runtime requirements: module */
 
+/*! runtime requirements: module, __webpack_exports__ */
+
 /*! runtime requirements: module, __webpack_require__ */
 
 /*! runtime requirements: module, __webpack_require__, __webpack_exports__ */
@@ -772,6 +784,10 @@
 
 /*!***********************************!*\
   !*** ./src/components/MapPage.js ***!
+  \***********************************/
+
+/*!***********************************!*\
+  !*** ./src/components/NewGame.js ***!
   \***********************************/
 
 /*!************************************!*\
@@ -993,6 +1009,14 @@
 /*!*****************************************!*\
   !*** ./node_modules/scheduler/index.js ***!
   \*****************************************/
+
+/*!*****************************************!*\
+  !*** ./node_modules/warning/warning.js ***!
+  \*****************************************/
+
+/*!******************************************!*\
+  !*** ./node_modules/classnames/index.js ***!
+  \******************************************/
 
 /*!******************************************!*\
   !*** ./node_modules/clsx/dist/clsx.m.js ***!
@@ -1586,8 +1610,16 @@
   !*** ./node_modules/lodash/_setWrapToString.js ***!
   \*************************************************/
 
+/*!*************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/Col.js ***!
+  \*************************************************/
+
 /*!**************************************************!*\
   !*** ./node_modules/change-emitter/lib/index.js ***!
+  \**************************************************/
+
+/*!**************************************************!*\
+  !*** ./node_modules/dom-helpers/esm/camelize.js ***!
   \**************************************************/
 
 /*!**************************************************!*\
@@ -1600,6 +1632,14 @@
 
 /*!**************************************************!*\
   !*** ./node_modules/lodash/_composeArgsRight.js ***!
+  \**************************************************/
+
+/*!**************************************************!*\
+  !*** ./node_modules/prop-types-extra/lib/all.js ***!
+  \**************************************************/
+
+/*!**************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/Form.js ***!
   \**************************************************/
 
 /*!***************************************************!*\
@@ -1620,6 +1660,14 @@
 
 /*!****************************************************!*\
   !*** ./node_modules/lodash/_isStrictComparable.js ***!
+  \****************************************************/
+
+/*!****************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/Button.js ***!
+  \****************************************************/
+
+/*!****************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/Switch.js ***!
   \****************************************************/
 
 /*!****************************************************!*\
@@ -1666,6 +1714,18 @@
   !*** ./node_modules/core-js/library/modules/_wks.js ***!
   \******************************************************/
 
+/*!******************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/Feedback.js ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/FormFile.js ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/FormText.js ***!
+  \******************************************************/
+
 /*!*******************************************************!*\
   !*** ./node_modules/@material-ui/core/esm/Tab/Tab.js ***!
   \*******************************************************/
@@ -1699,6 +1759,18 @@
   \*******************************************************/
 
 /*!*******************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/FormCheck.js ***!
+  \*******************************************************/
+
+/*!*******************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/FormGroup.js ***!
+  \*******************************************************/
+
+/*!*******************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/FormLabel.js ***!
+  \*******************************************************/
+
+/*!*******************************************************!*\
   !*** ./node_modules/react-router/esm/react-router.js ***!
   \*******************************************************/
 
@@ -1716,6 +1788,10 @@
 
 /*!********************************************************!*\
   !*** ./node_modules/css-vendor/dist/css-vendor.esm.js ***!
+  \********************************************************/
+
+/*!********************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/SafeAnchor.js ***!
   \********************************************************/
 
 /*!********************************************************!*\
@@ -1752,6 +1828,14 @@
 
 /*!*********************************************************!*\
   !*** ./node_modules/lodash/_matchesStrictComparable.js ***!
+  \*********************************************************/
+
+/*!*********************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/FormContext.js ***!
+  \*********************************************************/
+
+/*!*********************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/FormControl.js ***!
   \*********************************************************/
 
 /*!*********************************************************!*\
@@ -1830,6 +1914,18 @@
   !*** ./node_modules/core-js/library/modules/_redefine.js ***!
   \***********************************************************/
 
+/*!***********************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/FormFileInput.js ***!
+  \***********************************************************/
+
+/*!***********************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/FormFileLabel.js ***!
+  \***********************************************************/
+
+/*!***********************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/ThemeProvider.js ***!
+  \***********************************************************/
+
 /*!************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/esm/extends.js ***!
   \************************************************************/
@@ -1896,6 +1992,14 @@
 
 /*!************************************************************!*\
   !*** ./node_modules/core-js/library/modules/es6.symbol.js ***!
+  \************************************************************/
+
+/*!************************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/FormCheckInput.js ***!
+  \************************************************************/
+
+/*!************************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/FormCheckLabel.js ***!
   \************************************************************/
 
 /*!************************************************************!*\
@@ -2111,6 +2215,10 @@
   \****************************************************************/
 
 /*!****************************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/createWithBsPrefix.js ***!
+  \****************************************************************/
+
+/*!****************************************************************!*\
   !*** ./node_modules/react-dom/cjs/react-dom.production.min.js ***!
   \****************************************************************/
 
@@ -2232,6 +2340,10 @@
 
 /*!*******************************************************************!*\
   !*** ./node_modules/core-js/library/modules/es6.object.create.js ***!
+  \*******************************************************************/
+
+/*!*******************************************************************!*\
+  !*** ./node_modules/react-bootstrap/esm/createChainedFunction.js ***!
   \*******************************************************************/
 
 /*!*******************************************************************!*\
@@ -2532,6 +2644,10 @@
 
 /*!*******************************************************************************!*\
   !*** ./node_modules/@material-ui/styles/esm/StylesProvider/StylesProvider.js ***!
+  \*******************************************************************************/
+
+/*!*******************************************************************************!*\
+  !*** ./node_modules/prop-types-extra/lib/utils/createChainableTypeChecker.js ***!
   \*******************************************************************************/
 
 /*!*********************************************************************************!*\
