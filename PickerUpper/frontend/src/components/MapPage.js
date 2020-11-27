@@ -11,8 +11,13 @@ class MapPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            games: [{lat: -34.397, lng: 150.644}, {lat: 26.648840, lng: -80.192157}, {lat: 29.662400, lng: -82.355838}]
-        }
+            games: [
+                {title: 'Game One', coordinates: {lat: 26.648840, lng: -80.192157}}, 
+                {title: 'Game Two', coordinates: {lat: 29.662400, lng: -82.355838}}
+            ],
+            selectedGame: null
+        };
+
         this.handlePinClick = this.handlePinClick.bind(this);
     }
 
@@ -20,8 +25,9 @@ class MapPage extends React.Component {
         console.log('Getting games from DB');
     }
 
-    handlePinClick(){
-        console.log('MARKER CLICKED from MapPage.js');
+    handlePinClick(game){
+        console.log('Game ' + game.title + ' clicked.');
+        this.setState({selectedGame: game})
     }
 
     render(){
@@ -37,7 +43,7 @@ class MapPage extends React.Component {
                 <table style={{marginTop: '2rem'}}>
                     <tr>
                         <td>
-                            <GameDetails />
+                            <GameDetails game={this.state.selectedGame}/>
                         </td>
                         <td>
                             <Map games={this.state.games} handleClick={this.handlePinClick}/>
