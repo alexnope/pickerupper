@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import main
+from .views import pickUpFormView
 
 urlpatterns = [
-    path('home', main)
+    path('pickUpForm', pickUpFormView.as_view())
 ]
