@@ -15,9 +15,9 @@ class GamePage extends React.Component {
             <div>
                 <AppBar position="static">
                     <Tabs>
-                        <Tab label="Home" />
-                        <Tab label="Map" />
-                        <Tab label="Schedule Game" />
+                        <Tab label="Home" href="/home"/>
+                        <Tab label="Map" href="/map"/>
+                        <Tab label="Schedule Game" href="/game"/>
                     </Tabs>
                 </AppBar>
                 <p>This is the game page!</p>

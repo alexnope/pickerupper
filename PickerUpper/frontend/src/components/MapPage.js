@@ -35,9 +35,9 @@ class MapPage extends React.Component {
             <div>
                 <AppBar position="static">
                     <Tabs>
-                        <Tab label="Home" />
-                        <Tab label="Map" />
-                        <Tab label="Schedule Game" />
+                        <Tab label="Home" href="/home"/>
+                        <Tab label="Map" href="/map"/>
+                        <Tab label="Schedule Game" href="/game"/>
                     </Tabs>
                 </AppBar>
                 <table style={{marginTop: '2rem'}}>
