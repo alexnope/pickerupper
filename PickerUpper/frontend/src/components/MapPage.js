@@ -12,8 +12,24 @@ class MapPage extends React.Component {
         super(props);
         this.state = {
             games: [
-                {title: 'Game One', coordinates: {lat: 26.648840, lng: -80.192157}}, 
-                {title: 'Game Two', coordinates: {lat: 29.662400, lng: -82.355838}}
+                {name: 'Game One', 
+                coordinates: {lat: 26.648840, lng: -80.192157}, 
+                player_num: 6,
+                description: "This is a sample game. This is a sample game. This is a sample game. This is a sample game. This is a sample game. ", 
+                street: "2216 Widener Ter",
+                city: "Wellington",
+                state: "FL",
+                zip_code: "33414"
+                },
+                {name: 'Game Two', 
+                coordinates: {lat: 29.662400, lng: -82.355838}, 
+                player_num: 18,
+                description: "This is a sample game. This is a sample game. This is a sample game. This is a sample game. This is a sample game. ", 
+                street: "2216 Widener Ter",
+                city: "Gainesville",
+                state: "FL",
+                zip_code: "33414"
+                }
             ],
             selectedGame: null
         };
@@ -26,7 +42,6 @@ class MapPage extends React.Component {
     }
 
     handlePinClick(game){
-        console.log('Game ' + game.title + ' clicked.');
         this.setState({selectedGame: game})
     }
 

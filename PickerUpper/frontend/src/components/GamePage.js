@@ -20,7 +20,6 @@ class GamePage extends React.Component {
                         <Tab label="Schedule Game" href="/game"/>
                     </Tabs>
                 </AppBar>
-                <p>This is the game page!</p>
                 <NewGame />
             </div>
         )

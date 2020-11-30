@@ -1,5 +1,6 @@
 import React from 'react';
 import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
 
 class GameDetails extends React.Component {
 
@@ -12,7 +13,22 @@ class GameDetails extends React.Component {
             return(<p style={{marginLeft: '1rem'}}>No Game Selected</p>)
         } 
         else {
-            return(<p style={{marginLeft: '1rem'}}>{this.props.game.title}</p>)
+            return(
+                <table style={{marginLeft: '1rem'}}>
+                    <tr>
+                        <Typography gutterBottom>{this.props.game.name}</Typography>
+                    </tr>
+                    <tr>
+                        <Typography gutterBottom>{this.props.game.player_num} Players</Typography>
+                    </tr>
+                    <tr>
+                        <Typography gutterBottom>{this.props.game.street}, {this.props.game.city}, {this.props.game.state}, {this.props.game.zip_code}</Typography>
+                    </tr>
+                    <tr>
+                        <Typography gutterBottom>{this.props.game.description} Players</Typography>
+                    </tr>
+                </table>
+            )
         }
     }
 
