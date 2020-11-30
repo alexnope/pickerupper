@@ -4,12 +4,35 @@ import TextField from '@material-ui/core/TextField';
 import Slider from '@material-ui/core/Slider';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import Link from '@material-ui/core/Link';
 
 class NewGame extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      name: "",
+      player_num: 0,
+      street: "",
+      city: "",
+      state: "",
+      zip_code: "",
+      description: ""
+    }
+
+    this.handleFormChange = this.handleFormChange.bind(this);
+    this.handleSliderChange = this.handleSliderChange.bind(this);
+  }
+
+  handleFormChange(data){
+    this.setState(data)
+  }
+
+  handleSliderChange(event, value){
+    this.setState({player_num: value})
+  }
+
+  handleSubmit(){
+    console.log('submitted')
   }
 
   render(){
@@ -21,13 +44,13 @@ class NewGame extends React.Component {
                       <h3>Schedule a Game!</h3>
                   </tr>
                   <tr>
-                      <TextField style={{width: '30rem'}} label="Game Name" variant="outlined" />
+                      <TextField style={{width: '30rem'}} label="Game Name" variant="outlined" onChange={() => this.handleFormChange({name: event.target.value})}/>
                   </tr>
                   <tr>
                       <Typography id="discrete-slider" gutterBottom>Number of Players</Typography>
                   </tr>
                   <tr>
-                      <Slider defaultValue={4}  aria-labelledby="discrete-slider" valueLabelDisplay="auto" step={1} marks min={1} max={20}/>
+                      <Slider defaultValue={4} aria-labelledby="discrete-slider" valueLabelDisplay="auto" step={1} marks min={1} max={20} onChange={this.handleSliderChange}/>
                   </tr>
                   <tr>
                       <Typography id="discrete-slider" gutterBottom>Location</Typography>
@@ -35,17 +58,17 @@ class NewGame extends React.Component {
                   <tr>
                       <table>
                           <tr>
-                              <TextField style={{width: '30rem'}} label="Street" variant="outlined" />
+                              <TextField style={{width: '30rem'}} label="Street" variant="outlined" onChange={() => this.handleFormChange({street: event.target.value})}/>
                           </tr>
                           <tr>
-                              <TextField style={{width: '15rem'}} label="City" variant="outlined" />
-                              <TextField style={{width: '5rem'}} label="State" variant="outlined" />
-                              <TextField style={{width: '10rem'}} label="Zip Code" variant="outlined" />
+                              <TextField style={{width: '15rem'}} label="City" variant="outlined" onChange={() => this.handleFormChange({city: event.target.value})}/>
+                              <TextField style={{width: '5rem'}} label="State" variant="outlined" onChange={() => this.handleFormChange({state: event.target.value})}/>
+                              <TextField style={{width: '10rem'}} label="Zip Code" variant="outlined" onChange={() => this.handleFormChange({zip_code: event.target.value})}/>
                           </tr>
                       </table>
                   </tr>
                   <tr>
-                      <TextField style={{width: '30rem', height: '5rem'}} label="Description" multilinerows={4} variant="outlined"/>
+                      <TextField style={{width: '30rem', height: '5rem'}} label="Description" multilinerows={4} variant="outlined" onChange={() => this.handleFormChange({description: event.target.value})}/>
                   </tr>
                   <tr>
                       <Button variant="contained" color="primary" href="/map" >SCHEDULE GAME</Button>
