@@ -7,6 +7,7 @@ import random
 class pickUpGame(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     # host = models.CharField(max_length=50, unique=True) 
+    active = models.BooleanField(default=True)
     gameName = models.CharField(max_length=50, default=False)
     numPlayers = models.IntegerField(default=False)
     street = models.CharField(max_length=50, default=False)

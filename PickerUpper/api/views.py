@@ -10,6 +10,10 @@ class pickUpGameView(generics.ListAPIView):
     queryset = pickUpGame.objects.all()
     serializer_class = pickUpGameSerializer
 
+class getPickUpGamesView(generics.ListAPIView):
+    serializer_class = pickUpGameSerializer
+    queryset = pickUpGame.objects.filter(active=True)
+
 class createPickUpGameView(APIView):
     serializer_class = createPickUpGameSerializer
     def post(self, request, format=None):
