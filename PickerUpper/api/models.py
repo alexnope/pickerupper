@@ -1,15 +1,17 @@
 from django.db import models
+import uuid 
 import string
 import random
 
-def generate_unique_code():
-    length = 10
-    while True:
-        code = ''.join(random.choice(string.ascii_uppercase, k=length))
-        if PickUpForm.objects.filder(code=code).count() == 0:
-            break
-    return code
 # Create your models here.
-class pickUpForm(models.Model):
-    code = models.CharField(max_length=8, default="", unique=True)
-    host = models.CharField(max_length=50, unique=True)
+class pickUpGame(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    # host = models.CharField(max_length=50, unique=True) 
+    gameName = models.CharField(max_length=50, default=False)
+    numPlayers = models.IntegerField()
+    street = models.CharField(max_length=50, default=False)
+    city = models.CharField(max_length=50, default=False)
+    state = models.CharField(max_length=20, default=False)
+    zipCode = models.CharField(max_length=10, default=False)
+    description= models.CharField(max_length=500, default=False)
+    createdAt = models.DateTimeField(auto_now_add=True)

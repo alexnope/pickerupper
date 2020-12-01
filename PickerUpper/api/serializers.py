@@ -1,7 +1,12 @@
 from rest_framework import serializers
-from .models import pickUpForm
+from .models import pickUpGame
 
-class pickUpFormSerializer(serializers.ModelSerializer):
+class pickUpGameSerializer(serializers.ModelSerializer):
     class Meta:
-        model = pickUpForm
-        fields = ('id','code','host')
+        model = pickUpGame
+        fields = ('id', 'gameName', 'numPlayers', 'street', 'city', 'state', 'zipCode', 'description', 'createdAt')
+
+class createPickUpGameSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = pickUpGame
+        fields = ('gameName', 'numPlayers', 'street', 'city', 'state', 'zipCode', 'description')

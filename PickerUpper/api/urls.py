@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import pickUpFormView
+from .views import pickUpGameView, createPickUpGameView
 
 urlpatterns = [
-    path('pickUpForm', pickUpFormView.as_view())
+    path('pickUpGame', pickUpGameView.as_view()),
+    path('createPickUpGame', createPickUpGameView.as_view()),
 ]
