@@ -45,34 +45,44 @@ class NewGame extends React.Component {
     }
 
     var address = this.state.street + ", " + this.state.city + ", " + this.state.state + ", " + this.state.zip_code
+    var gameLat = 0;
+    var gameLng = 0;
     
-    Geocode.fromAddress(address).then(
+    const GeoResponse = Geocode.fromAddress(address).then(
       response => {
         const { lat, lng } = response.results[0].geometry.location;
         console.log(lat, lng);
+        gameLat = lat;
+        gameLng = lng;
+
+        const requestOptions = {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({
+            gameName: this.state.name,
+            numPlayers: this.state.player_num,
+            street: this.state.street,
+            city: this.state.city,
+            state: this.state.state,
+            zipCode: this.state.zip_code,
+            description: this.state.description,
+            lng: gameLng,
+            lat: gameLat
+          }),
+        };
+         
+        fetch('../api/createPickUpGame', requestOptions)
+          .then((response) => response.json())
+          .then((data) => console.log(data))
       },
       error => {
         console.error(error);
       }
     );
 
-    const requestOptions = {
-      method: 'POST',
-      headers: {'Content-Type': 'application.json'},
-      body: JSON.stringify({
-        name: this.state.name,
-        player_num: this.state.player_num,
-        street: this.state.street,
-        city: this.state.city,
-        state: this.state.state,
-        zip_code: this.state.zip_code,
-        description: this.state.description
-      })
-    };
-     
-    fetch('api/createPickUpGame', requestOptions)
-      .then((response) => response.json())
-      .then((data) => console.log(data))
+    console.log(GeoResponse);
+
+    
   }
 
   render(){
