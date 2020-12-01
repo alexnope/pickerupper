@@ -24,9 +24,11 @@ class createPickUpGameView(APIView):
             state = serializer.data.get('state')
             zipCode = serializer.data.get('zipCode')
             description = serializer.data.get('description')
+            lng = serializer.data.get('lng')
+            lat = serializer.data.get('lat')
             # host = self.request.session.session_key 
             game = pickUpGame(gameName=gameName, numPlayers=numPlayers, street=street,
-            city=city, state=state, zipCode=zipCode, description=description)
+            city=city, state=state, zipCode=zipCode, description=description, lng=lng, lat=lat)
             game.save()
             return Response(pickUpGameSerializer(game).data, status=status.HTTP_200_OK)
         return Response({'Bad Request': 'Invalid data...'}, status=status.HTTP_400_BAD_REQUEST)

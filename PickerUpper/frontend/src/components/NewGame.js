@@ -70,7 +70,7 @@ class NewGame extends React.Component {
       })
     };
      
-    fetch('api/create-pickup-game', requestOptions)
+    fetch('api/createPickUpGame', requestOptions)
       .then((response) => response.json())
       .then((data) => console.log(data))
   }
