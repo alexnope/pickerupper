@@ -44,8 +44,6 @@ class NewGame extends React.Component {
       }
     }
 
-    console.log("now submitted")
-
     var address = this.state.street + ", " + this.state.city + ", " + this.state.state + ", " + this.state.zip_code
     
     Geocode.fromAddress(address).then(
@@ -58,6 +56,23 @@ class NewGame extends React.Component {
       }
     );
 
+    const requestOptions = {
+      method: 'POST',
+      headers: {'Content-Type': 'application.json'},
+      body: JSON.stringify({
+        name: this.state.name,
+        player_num: this.state.player_num,
+        street: this.state.street,
+        city: this.state.city,
+        state: this.state.state,
+        zip_code: this.state.zip_code,
+        description: this.state.description
+      })
+    };
+     
+    fetch('api/create-pickup-game', requestOptions)
+      .then((response) => response.json())
+      .then((data) => console.log(data))
   }
 
   render(){
