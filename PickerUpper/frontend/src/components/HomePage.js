@@ -19,7 +19,7 @@ class HomePage extends React.Component {
                         <Tab label="Schedule Game" href="/game"/>
                     </Tabs>
                 </AppBar>
-                <p>This is the home page!</p>
+                <p>Hello</p>
             </div>
         )
     }

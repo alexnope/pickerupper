@@ -7,7 +7,7 @@ import {
     Marker,
   } from "react-google-maps";
 
-class Map extends React.Component {
+class GameMap extends React.Component {
 
     constructor(props){
         super(props);
@@ -32,4 +32,4 @@ class Map extends React.Component {
     }
 }
 
-export default Map;
+export default GameMap;

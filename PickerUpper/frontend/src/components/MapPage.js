@@ -3,7 +3,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import GameDetails from './GameDetails';
-import Map from './Map';
+import GameMap from './GameMap';
   
 
 class MapPage extends React.Component {
@@ -61,7 +61,7 @@ class MapPage extends React.Component {
                             <GameDetails game={this.state.selectedGame}/>
                         </td>
                         <td>
-                            <Map games={this.state.games} handleClick={this.handlePinClick}/>
+                            <GameMap games={this.state.games} handleClick={this.handlePinClick}/>
                         </td>
                     </tr>
                 </table>
