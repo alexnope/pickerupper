@@ -1,77 +1,101 @@
 import React from 'react';
-//import ReactDOM from 'react-dom';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
+import Paper from '@material-ui/core/Paper';
+import TextField from '@material-ui/core/TextField';
+import Slider from '@material-ui/core/Slider';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import Geocode from 'react-geocode';
+
+Geocode.setApiKey('AIzaSyAXS2eGOGwvokpQlqGi4VPfbp5QO08lrGk')
 
 class NewGame extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      name: null,
+      player_num: 4,
+      street: null,
+      city: null,
+      state: null,
+      zip_code: null,
+      description: null
+    }
+
+    this.handleFormChange = this.handleFormChange.bind(this);
+    this.handleSliderChange = this.handleSliderChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleFormChange(data){
+    this.setState(data)
+  }
+
+  handleSliderChange(event, value){
+    this.setState({player_num: value})
+  }
+
+  handleSubmit(){
+
+    for(let k in this.state){
+      if(this.state[k] == null || this.state[k] == ""){
+        alert("Make sure you fill out all the fields.")
+        return
+      }
+    }
+
+    console.log("now submitted")
+
+    var address = this.state.street + ", " + this.state.city + ", " + this.state.state + ", " + this.state.zip_code
+    
+    Geocode.fromAddress(address).then(
+      response => {
+        const { lat, lng } = response.results[0].geometry.location;
+        console.log(lat, lng);
+      },
+      error => {
+        console.error(error);
+      }
+    );
+
   }
 
   render(){
     return(
-      <div>
-        <h1>Enter a New Pick-Up Game!</h1>
-        <Form>
-          <Form.Group controlID = "formName">
-            <Form.Label>Name</Form.Label>
-            <Form.Control type = "name" placeholder = "Enter name" />
-          </Form.Group>
-
-          <Form.Group controlID = "formLocation">
-          <Form.Label>Location</Form.Label>
-          <Form.Control type = "location" placeholder = "Enter the location" />
-        </Form.Group>
-
-        <Form.Group controlID = "formSport">
-          <Form.Label>Sport</Form.Label>
-          <Form.Control type = "sport" placeholder = "Enter the sport" />
-        </Form.Group>
-
-        <Form.Group controlID = "formPlayers">
-          <Form.Label>Number of Players</Form.Label>
-            <Form.Control as = "select">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
-              <option>9</option>
-              <option>10</option>
-              <option>11</option>
-              <option>12</option>
-              <option>13</option>
-              <option>14</option>
-              <option>15</option>
-              <option>16</option>
-              <option>17</option>
-              <option>18</option>
-              <option>19</option>
-              <option>20</option>
-              <option>21</option>
-              <option>22</option>
-              <option>23</option>
-              <option>24</option>
-              <option>25</option>
-              <option>26</option>
-              <option>27</option>
-              <option>28</option>
-              <option>29</option>
-              <option>30</option>
-            </Form.Control>
-          </Form.Group>
-
-          <Form.Group controlID = "formDescription">
-            <Form.Label>Description</Form.Label>
-            <Form.Control as = "textarea" rows = {3} />
-          </Form.Group>
-
-          <Button variant = "primary" type = "submit">Submit</Button>
-        </Form>
+      <div style={{marginTop: '4rem'}}>
+          <Paper style={{width: '40rem', height: '50rem', margin: 'auto'}} elevation={3}>
+              <table style={{marginLeft: '1rem'}}>
+                  <tr>
+                      <h3 style={{paddingBottom: '2rem'}}>Schedule a Game!</h3>
+                  </tr>
+                  <tr>
+                      <TextField style={{paddingBottom: '3rem', width: '30rem'}} label="Game Name" variant="outlined" onChange={() => this.handleFormChange({name: event.target.value})}/>
+                  </tr>
+                  <tr>
+                      <Typography gutterBottom>Number of Players: {this.state.player_num}</Typography>
+                  </tr>
+                  <tr>
+                      <Slider style={{paddingBottom: '3rem'}} defaultValue={4} aria-labelledby="discrete-slider" step={1} marks min={1} max={20} onChange={this.handleSliderChange}/>
+                  </tr>
+                  <tr>
+                      <Typography gutterBottom>Location</Typography>
+                  </tr>
+                  <tr>
+                      <TextField style={{paddingBottom: '1rem', width: '30rem'}} label="Street" variant="outlined" onChange={() => this.handleFormChange({street: event.target.value})}/>
+                  </tr>
+                  <tr>
+                      <TextField style={{width: '15rem'}} label="City" variant="outlined" onChange={() => this.handleFormChange({city: event.target.value})}/>
+                      <TextField style={{width: '5rem'}} label="State" variant="outlined" onChange={() => this.handleFormChange({state: event.target.value})}/>
+                      <TextField style={{paddingBottom: '3rem', width: '10rem'}} label="Zip Code" variant="outlined" onChange={() => this.handleFormChange({zip_code: event.target.value})}/>
+                  </tr>
+                  <tr>
+                      <TextField style={{width: '30rem', height: '5rem'}} label="Description" multilinerows={4} variant="outlined" onChange={() => this.handleFormChange({description: event.target.value})}/>
+                  </tr>
+                  <tr>
+                      <Button variant="contained" color="primary" onClick={this.handleSubmit}>SCHEDULE GAME</Button>
+                  </tr>
+              </table>
+          </Paper>
       </div>
     )
   }
