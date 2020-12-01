@@ -4,24 +4,27 @@ import TextField from '@material-ui/core/TextField';
 import Slider from '@material-ui/core/Slider';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import Geocode from 'react-geocode';
 
+Geocode.setApiKey('AIzaSyAXS2eGOGwvokpQlqGi4VPfbp5QO08lrGk')
 
 class NewGame extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
-      player_num: 0,
-      street: "",
-      city: "",
-      state: "",
-      zip_code: "",
-      description: ""
+      name: null,
+      player_num: 4,
+      street: null,
+      city: null,
+      state: null,
+      zip_code: null,
+      description: null
     }
 
     this.handleFormChange = this.handleFormChange.bind(this);
     this.handleSliderChange = this.handleSliderChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleFormChange(data){
@@ -33,7 +36,28 @@ class NewGame extends React.Component {
   }
 
   handleSubmit(){
-    console.log('submitted')
+
+    for(let k in this.state){
+      if(this.state[k] == null || this.state[k] == ""){
+        alert("Make sure you fill out all the fields.")
+        return
+      }
+    }
+
+    console.log("now submitted")
+
+    var address = this.state.street + ", " + this.state.city + ", " + this.state.state + ", " + this.state.zip_code
+    
+    Geocode.fromAddress(address).then(
+      response => {
+        const { lat, lng } = response.results[0].geometry.location;
+        console.log(lat, lng);
+      },
+      error => {
+        console.error(error);
+      }
+    );
+
   }
 
   render(){
@@ -48,10 +72,10 @@ class NewGame extends React.Component {
                       <TextField style={{paddingBottom: '3rem', width: '30rem'}} label="Game Name" variant="outlined" onChange={() => this.handleFormChange({name: event.target.value})}/>
                   </tr>
                   <tr>
-                      <Typography gutterBottom>Number of Players</Typography>
+                      <Typography gutterBottom>Number of Players: {this.state.player_num}</Typography>
                   </tr>
                   <tr>
-                      <Slider style={{paddingBottom: '3rem'}} defaultValue={4} aria-labelledby="discrete-slider" valueLabelDisplay="auto" step={1} marks min={1} max={20} onChange={this.handleSliderChange}/>
+                      <Slider style={{paddingBottom: '3rem'}} defaultValue={4} aria-labelledby="discrete-slider" step={1} marks min={1} max={20} onChange={this.handleSliderChange}/>
                   </tr>
                   <tr>
                       <Typography gutterBottom>Location</Typography>
@@ -68,7 +92,7 @@ class NewGame extends React.Component {
                       <TextField style={{width: '30rem', height: '5rem'}} label="Description" multilinerows={4} variant="outlined" onChange={() => this.handleFormChange({description: event.target.value})}/>
                   </tr>
                   <tr>
-                      <Button variant="contained" color="primary" href="/map" >SCHEDULE GAME</Button>
+                      <Button variant="contained" color="primary" onClick={this.handleSubmit}>SCHEDULE GAME</Button>
                   </tr>
               </table>
           </Paper>

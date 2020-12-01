@@ -16,9 +16,9 @@ class GameMap extends React.Component {
     render(){
 
         const MapWithAMarker = withScriptjs(withGoogleMap(props =>
-        <GoogleMap defaultZoom={8} defaultCenter={{ lat: -34.397, lng: 150.644 }}>
+        <GoogleMap defaultZoom={8} defaultCenter={{ lat: 30.443315, lng: -84.304242 }}>
             {<Marker position={this.props.games[1]} onClick={this.props.handleClick}/>}
-            {this.props.games.map( (game, index) => <Marker key={index} position={game.coordinates} onClick={() => this.props.handleClick(game)}/>)}
+            {this.props.games.map( (game, index) => <Marker key={index} position={{lat: game.lat, lng: game.lng}} onClick={() => this.props.handleClick(game)}/>)}
         </GoogleMap>
         ));
           
