@@ -1,11 +1,11 @@
 # Picker Upper
 
-## Problem To Solve
+### Problem To Solve
 
-## Python Libraries
+### Python Libraries
 
-## Getting Started
+### Getting Started
 
-## Resources Used
+### Resources Used
 
-## Separation of Work
+### Separation of Work
