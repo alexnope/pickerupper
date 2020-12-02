@@ -4,7 +4,6 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import GameDetails from './GameDetails';
 import GameMap from './GameMap';
-  
 
 class MapPage extends React.Component {
 
