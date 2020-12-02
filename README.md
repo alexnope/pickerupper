@@ -1,10 +1,10 @@
 # Picker Upper
 
+### Getting Started
+
 ### Problem To Solve
 
 ### Python Libraries
-
-### Getting Started
 
 ### Resources Used
 
