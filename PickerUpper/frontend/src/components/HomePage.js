@@ -39,7 +39,7 @@ class HomePage extends React.Component {
                         </ol>
                     </tr>
                     <tr>
-                        <p>If you wish to make changes to the application, make sure to go to the "frontend" folder, and run the command npm run dev. This command will run Webpack in development mode (do this after step 3).</p>
+                        <p>If you wish to make changes to the application, make sure to go to the "frontend" folder, and run the command <strong>npm run dev</strong>. This command will run Webpack in development mode (do this after step 3).</p>
                     </tr>
                     <tr>
                         <h4>Problem To Solve</h4>
