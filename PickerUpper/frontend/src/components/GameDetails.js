@@ -16,16 +16,16 @@ class GameDetails extends React.Component {
             return(
                 <table style={{marginLeft: '1rem'}}>
                     <tr>
-                        <Typography gutterBottom>{this.props.game.name}</Typography>
+                        <Typography gutterBottom>{this.props.game.gameName}</Typography>
                     </tr>
                     <tr>
-                        <Typography gutterBottom>{this.props.game.player_num} Players</Typography>
+                        <Typography gutterBottom>{this.props.game.numPlayers} Players</Typography>
                     </tr>
                     <tr>
-                        <Typography gutterBottom>{this.props.game.street}, {this.props.game.city}, {this.props.game.state}, {this.props.game.zip_code}</Typography>
+                        <Typography gutterBottom>{this.props.game.street}, {this.props.game.city}, {this.props.game.state}, {this.props.game.zipCode}</Typography>
                     </tr>
                     <tr>
-                        <Typography gutterBottom>{this.props.game.description} Players</Typography>
+                        <Typography gutterBottom>{this.props.game.description} </Typography>
                     </tr>
                 </table>
             )

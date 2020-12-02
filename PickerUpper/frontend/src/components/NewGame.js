@@ -51,7 +51,6 @@ class NewGame extends React.Component {
     const GeoResponse = Geocode.fromAddress(address).then(
       response => {
         const { lat, lng } = response.results[0].geometry.location;
-        console.log(lat, lng);
         gameLat = lat;
         gameLng = lng;
 
@@ -74,15 +73,12 @@ class NewGame extends React.Component {
         fetch('../api/createPickUpGame', requestOptions)
           .then((response) => response.json())
           .then((data) => console.log(data))
+          .then(alert("Game created succesfully."))
       },
       error => {
         console.error(error);
       }
     );
-
-    console.log(GeoResponse);
-
-    
   }
 
   render(){
