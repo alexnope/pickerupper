@@ -22,5 +22,5 @@ The problem we aim to solve is lack of information and communication between peo
 - Google Cloud Platform
 
 ### Separation of Work
-- Andrés: Built the entire front end of the application, as well as all of the setting and configuration of the django project to work with javascript and React.
-- Alex: Handled the database operations. Created serializers to check for validity of requests from the front end to the back end, as well as the views required to handle those requests and return a response. 
+- **Andrés Aguilar**: Built the entire front end of the application, as well as all of the setting and configuration of the django project to work with javascript and React.
+- **Alex No**: Handled the database operations. Created serializers to check for validity of requests from the front end to the back end, as well as the views required to handle those requests and return a response. 
