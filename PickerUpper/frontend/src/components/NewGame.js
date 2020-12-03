@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Geocode from 'react-geocode';
 
-Geocode.setApiKey('AIzaSyAXS2eGOGwvokpQlqGi4VPfbp5QO08lrGk')
+Geocode.setApiKey('AIzaSyDEzN5lYRv4hV47Vmnw4nVsz9DSvx4oljk')
 
 class NewGame extends React.Component {
 

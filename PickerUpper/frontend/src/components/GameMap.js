@@ -24,7 +24,7 @@ class GameMap extends React.Component {
           
         return(
             <Paper id='game-details' style={{width: '60rem', height: '50rem', marginLeft: '5rem'}} elevation={3}>
-                <MapWithAMarker googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXS2eGOGwvokpQlqGi4VPfbp5QO08lrGk&v=3.exp&libraries=geometry,drawing,places"
+                <MapWithAMarker googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEzN5lYRv4hV47Vmnw4nVsz9DSvx4oljk&v=3.exp&libraries=geometry,drawing,places"
                 loadingElement={<div style={{ height: `100%` }} />} containerElement={<div style={{ height: `50rem` }} />} mapElement={<div style={{ height: `100%` }} />}/>
             </Paper>
             
